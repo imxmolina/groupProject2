@@ -1,0 +1,28 @@
+
+
+
+.navbar-brand {
+    font-family: 'Shrikhand', cursive;
+    color: white;
+    font-size: 50px;
+
+}
+
+
+body {
+    background-image: url("../css/images/bar.png");
+    margin: 0px;
+}
+
+.nav-link {
+    position: relative;
+    margin-left: 325px;
+}
+
+.nav-link2 {
+    position: absolute;
+    margin-left: 50px;
+
+}
+
+
