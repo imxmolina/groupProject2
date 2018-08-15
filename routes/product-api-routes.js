@@ -11,7 +11,7 @@ module.exports = function(app){
         db.Product.findAll({
             where: query,
             include: [db.Client]
-        }).then(function(dbClient){
+        }).then(function(dbProduct){
             res.json(dbProduct);
         });
     });
@@ -23,7 +23,7 @@ module.exports = function(app){
             },
             include:[db.Client]
         }).then(function(dbProduct){
-            res.json(dbClient);
+            res.json(dbProduct);
         });
     });
 
@@ -45,7 +45,7 @@ module.exports = function(app){
 
     app.put("/api/products", function(req,res){
         db.Product.update(
-            req.body,
+            {current_stock: req.body.current_stock},
             {
                 where: {
                     id: req.body.id
