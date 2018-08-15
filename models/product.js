@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
     var Product = sequelize.define("Product", {
         id: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
@@ -42,8 +42,8 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    Post.associate = function (models) {
-        Post.belongTo(model.client, {
+    Product.associate = function (models) {
+        Product.belongsTo(models.client, {
             foreignKey: {
                 allowNull: false
             }
