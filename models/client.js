@@ -13,14 +13,14 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
     }
 
   });
   Client.associate = function(models){
-    Client.hasMany(models.Products, {
+    Client.hasMany(models.Product, {
       onDelete: "cascade"
     });
   };
