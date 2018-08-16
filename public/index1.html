@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WORD GUESS</title>
+</head>
+
+<body>
+
+    <div id="game">
+        <p>Press space bar to start playing!</p>
+        <p id="guessWord"></p>
+        <p id="guessLeft"></p>
+        <p id="livesLeft"></p>
+        <p id+ "winTotal"></p>
+    </div>
+
+
+    <script type="text/javascript">
+
+        // VARIABLES
+
+        //Array of words
+        var wordBank = ["EARTHLING", "DOCUMENTARY", "SWITZERLAND", "CILANTRO", "PACHINKO", "GREYHOUND",
+            "DUMBWAITER", "BINOCULAR", "TRAMPOLINE", "VULCANIZED", "TRAPEZOID", "ARTICHOKE", "NIGHTMARE",
+            "LUMBERJACK", "CLOTHESPIN", "PALINDROME", "FLUORIDE"];
+
+        var letterBank = [];
+        var wins = 0;
+        var lives = 3;
+        var guesses = 5;
+
+        var theWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+
+        function resetGame() {
+            //VARIABLES TO HOLD WINS, LIVES, GUESSES
+            guesses = 5;
+            // FUNCTIONS
+            //Function to randomlyy choose word from wordBank
+            //reset letterBank again 
+            letterBank = [];
+            theWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+            console.log("the word is ? ")
+            //Saves word as _ _ _ 
+            for (var i = 0; i < theWord.length; i++) {
+                letterBank.push("_")
+            }
+            console.log(letterBank)
+
+        }
+
+
+
+        resetGame()
+
+
+        document.onkeyup = function (event) {
+            //Determines which key was pressed.
+            var blankLetters = event.key.toUpperCase();
+            console.log(blankLetters)
+            //// return letters in the dashes
+            if (theWord.indexOf(blankLetters) < 0) {
+                guesses--;
+            } else {
+                for (i = 0; i < theWord.length; i++) {
+                    if (theWord[i] === blankLetters) {
+                        letterBank[i] = blankLetters;
+                    }
+                }
+            }
+
+            console.log(letterBank)
+            console.log("Guesses left " + guesses)
+
+            if (guesses == 0) {
+                lives--;
+                resetGame();
+
+                console.log("Lives Left " + lives)
+            }
+
+        }
+
+
+
+
+        //Variable to hold all the html
+
+       // var html = 
+       // "<p> Guess the word: " + letterBank + "<p>" +
+       // "<p> Guesses left: " + guesses + "<p>" +
+       // "<p> Lives " + lives + "<p>" +
+       // "<p> Wins " + wins + "<p>";
+
+        //Sets inner HTML contents of the #game div to HTML string
+        //document.querySelector("#game").innerHTML = html;
+
+
+    </script>
+
+
+</body>
+
+</html>
