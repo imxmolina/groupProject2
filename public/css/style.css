@@ -1,0 +1,32 @@
+
+.navbar-brand {
+  font-family: 'Shrikhand', cursive;
+  color: white;
+  font-size: 50px;
+  background-color: black;
+
+}
+
+
+body {
+  background-color: black;
+  margin: 0px;
+}
+
+
+.nav-link {
+  color: gray;
+}
+
+#navbarSupportedContent {
+  background-color: black;
+  color: white;
+}
+
+mainNavBar {
+  background-color: black;
+}
+
+navbar {
+  background-color: black;
+}
