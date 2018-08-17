@@ -10,19 +10,12 @@ $(".submit").on("click", function (event) {
     // Here we grab the form elements
     var newInventory = {
         product: $("#product").val().trim(),  // HTML FORM ID=product
-        producttype: $("#producttype").val().trim(),                  // HTML FORM ID=producttype
+        product_type: $("#producttype").val().trim(),                  // HTML FORM ID=producttype
         distributor: $("#distributor").val().trim(),   // HTML FORM ID=distributor
         casequantity: $("#casequantity").val().trim(),                  // HTML FORM ID=casequantity
-        bottlequantity: $("#bottlequantity").val().trim(),                  // HTML FORM ID=bottlequantity
         bottlesize: $("#bottlesize").val().trim(),                  // HTML FORM ID=bottlesize
-        fullstock: $("#fullstock").val().trim(),                  // HTML FORM ID=fullstock
-        currentstock: $("#currentstock").val().trim(),                  // HTML FORM ID=currentstock
-        clientid: $("#clientid").val().trim()                  // HTML FORM ID=clientid
-
-        // TEST VALUES
-        // clientname: "isanchez",
-        // pwd: "pwd",
-        // login_email: "ianpsanchez@gmail.com"
+        pars: $("#fullstock").val().trim(),                  // HTML FORM ID=fullstock
+        current_stock: $("#currentstock").val().trim(),                  // HTML FORM ID=currentstock
 
     };
 
@@ -34,7 +27,7 @@ $(".submit").on("click", function (event) {
     // depending on if a tables is available or not.
 
     // POSTING the newClient object to node.js route /api/newClient
-    $.post("/api/products", newInventory,
+    $.post("/api/all", newInventory,
         function (data) {
 
             console.log("return data from node route: --> " + data.loginemail);

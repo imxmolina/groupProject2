@@ -1,4 +1,4 @@
-$.get("/api/products", function (data) {
+$.get("/api/all", function (data) {
     console.log(data);
 
     $("#product").text(data.product);

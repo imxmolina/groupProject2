@@ -1,9 +1,13 @@
-$.put("/api/products", function(data) {
 
+  
+
+
+  $.get("/api/all/", function(data) {
+    console.log(data);
     // for each character that our server sends us back
     for (var i = 0; i < data.length; i++) {
       // create a parent div for the oncoming elements
-      var addProducts = $("<div>");
+      var allProducts = $("<div>");
       // add a class to this div: 'well'
       allProducts.addClass("all");
       // add an id to the well to mark which well it is
