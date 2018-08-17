@@ -12,8 +12,8 @@ $(".submit").on("click", function (event) {
         product: $("#product").val().trim(),  // HTML FORM ID=product
         product_type: $("#producttype").val().trim(),                  // HTML FORM ID=producttype
         distributor: $("#distributor").val().trim(),   // HTML FORM ID=distributor
-        casequantity: $("#casequantity").val().trim(),                  // HTML FORM ID=casequantity
-        bottlesize: $("#bottlesize").val().trim(),                  // HTML FORM ID=bottlesize
+        case_quantity: $("#casequantity").val().trim(),                  // HTML FORM ID=casequantity
+        bottle_size: $("#bottlesize").val().trim(),                  // HTML FORM ID=bottlesize
         pars: $("#fullstock").val().trim(),                  // HTML FORM ID=fullstock
         current_stock: $("#currentstock").val().trim(),                  // HTML FORM ID=currentstock
 
@@ -30,7 +30,7 @@ $(".submit").on("click", function (event) {
     $.post("/api/all", newInventory,
         function (data) {
 
-            console.log("return data from node route: --> " + data.loginemail);
+            console.log("return data from node route: --> " + data.product);
             alert("new client form submitted, thank you.");
 
             // Clear the form when submitting
