@@ -2,6 +2,7 @@
 
 
 
+
 $.get("/api/all/", function (data) {
   console.log(data);
   // for each character that our server sends us back
@@ -53,20 +54,20 @@ $(".orderSubmit").on("click", function (event) {
   // select all of class "all"
   var json = {};
   var products = $(".all");
-  for (var i = 0; i < products.length; i++){
-
-    json["" + $("#input"+i).attr("productid")] = $("#input"+i).val(); 
+  for (var i = 1; i < products.length; i++){
+    
+    json[$("#input"+i).attr("productid")] = {"id":""+$("#input"+i).attr("productid"),"count": ""+$("#input"+i).val()}; 
   }
   console.log(json);
   //console.log(products);
   //for however many we get
-  var newOrder = {
-    product_name: $("#product").val().trim(),
-    id: $("#id").val().trim(),
+  // var newOrder = {
+  //   product_name: $("#product").val().trim(),
+  //   id: $("#id").val().trim(),
 
-  };
+  // };
 
-  $.post("/api/all", newOrder,
+  $.post("/api/update", json,
     function (data) {
 
       console.log("return data from node route: --> " + data.product);
@@ -78,7 +79,6 @@ $(".orderSubmit").on("click", function (event) {
     });
 
 })
-
 
 
 
