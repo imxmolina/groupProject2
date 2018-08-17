@@ -44,7 +44,8 @@ module.exports = function(app){
         });
     });
 
-    app.put("/api/all", function(req,res){
+    app.post("/api/update", function(req,res){
+        console.log(req);
         db.Product.update(
             {current_stock: req.body.current_stock},
             {
