@@ -1,32 +1,109 @@
 
-.navbar-brand {
+.jumbotron {
   font-family: 'Shrikhand', cursive;
-  color: white;
-  font-size: 50px;
   background-color: black;
+  color: white;
+
 
 }
 
+h2 {
+  font-family: 'Shrikhand', cursive;
+  color: white;
+  text-align: center;
+}
 
 body {
   background-color: black;
-  margin: 0px;
 }
 
 
-.nav-link {
-  color: gray;
+.display-4 {
+  font-size: 150px;
+  align-items: center;
+  margin-left: 400px;
+
 }
 
-#navbarSupportedContent {
+.lead {
+  font-size: 45px;
+  margin-left: 500px;
+}
+
+#inventory {
+  height: 280px;
+  width: 280px;
+  margin-left: 50px;
+}
+
+#beer {
+  height: 300px;
+  width: 300px;
+  margin-left: 50px;
+
+}
+
+
+#bottle {
+  height: 300px;
+  width: 300px;
+  margin-left: 50px;
+
+
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.card-header {
+  background-color: black;
+
+}
+
+.all-products {
+  border: 50px;
+  border-color: white;
+  font-family: 'Shrikhand', cursive;
+  background-color: black;
+  color: white;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.card-header{
+  font-family: 'Shrikhand', cursive;
+  font-size: 70px;
   background-color: black;
   color: white;
 }
 
-mainNavBar {
+button {
+  font-family: 'Shrikhand', cursive;
+  background-color: black;
+  color: white;
+  align-content: center;
+  
+}
+
+.orderSubmit {
+  font-family: 'Shrikhand', cursive;
+  background-color: black;
+  color: white;
+  font-size: 40px;
+  margin-left: 550px;
+
+}
+
+.card {
   background-color: black;
 }
 
-navbar {
+#label-text{
+  font-family: 'Shrikhand', cursive;
   background-color: black;
+  color: white;
+
 }
